@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Mensaje } from '../models/message';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ComunicationService {
-  receivedMessages: Mensaje[] = [
-    {
-      remitent: 'Gabriel Villegas',
-      destinatary: 'Jose ',
-      content: 'Este es un mensaje de prueba',
-    },
-  ];
+  userActive: User;
+
+  sendUserActive(user: User) {
+    this.userActive = user;
+  }
+
+  getUserActive(): User {
+    return this.userActive;
+  }
 
   constructor() {}
 }

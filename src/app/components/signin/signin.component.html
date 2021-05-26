@@ -7,71 +7,79 @@
         <form [formGroup]="signinForm">
           <div class="signin__form--firstName">
             <mat-form-field appearance="outline">
-              <mat-label>Nombre</mat-label>
+              <mat-label>Nombre (*)</mat-label>
               <input matInput formControlName="firstName" />
-              <mat-icon matSuffix>account_circle</mat-icon>
-              <mat-hint>Hint</mat-hint>
+              <mat-icon matSuffix>person</mat-icon>
             </mat-form-field>
           </div>
 
           <div class="signin__form--secondName">
             <mat-form-field appearance="outline">
-              <mat-label>Apellido</mat-label>
+              <mat-label>Apellido (*)</mat-label>
               <input matInput formControlName="secondName" />
-              <mat-icon matSuffix>account_circle</mat-icon>
-              <mat-hint>Hint</mat-hint>
+              <mat-icon matSuffix>person</mat-icon>
             </mat-form-field>
           </div>
           <div class="signin__form--username">
-            <mat-form-field appearance="outline">
-              <mat-label>Usuario</mat-label>
+            <mat-form-field hintLabel="Min: 6 - Max: 20" appearance="outline">
+              <mat-label>Usuario (*)</mat-label>
               <input matInput formControlName="username" />
               <mat-icon matSuffix>account_circle</mat-icon>
-              <mat-hint>Hint</mat-hint>
+              <mat-hint align="end"
+                >{{ username.value?.length || 0 }}/20</mat-hint
+              >
             </mat-form-field>
           </div>
-
           <div class="signin__form--password">
-            <mat-form-field appearance="outline">
-              <mat-label>Password</mat-label>
+            <mat-form-field hintLabel="Min: 6 - Max: 10" appearance="outline">
+              <mat-label>Password (*)</mat-label>
               <input matInput type="password" formControlName="password" />
               <mat-icon matSuffix> vpn_key</mat-icon>
-              <mat-hint>Hint</mat-hint>
+              <mat-hint align="end"
+                >{{ password.value?.length || 0 }}/10</mat-hint
+              >
             </mat-form-field>
           </div>
           <div class="signin__form--confirmPassword">
             <mat-form-field appearance="outline">
-              <mat-label>Confirmar Password</mat-label>
+              <mat-label>Confirmar Password (*)</mat-label>
               <input
                 matInput
                 type="Password"
                 formControlName="confirmPassword"
               />
               <mat-icon matSuffix> vpn_key</mat-icon>
-              <mat-hint>Hint</mat-hint>
             </mat-form-field>
           </div>
-
           <div class="signin__form--country">
             <mat-form-field appearance="outline">
-              <mat-label>País</mat-label>
-              <input matInput formControlName="country" />
+              <mat-label>País (*)</mat-label>
+              <mat-select formControlName="country">
+                <mat-option
+                  *ngFor="let country of countries"
+                  value="{{ country.name | lowercase }}"
+                  >{{ country.name }}</mat-option
+                >
+              </mat-select>
               <mat-icon matSuffix> location_on</mat-icon>
-              <mat-hint>Hint</mat-hint>
             </mat-form-field>
           </div>
 
           <div class="signin__form--province">
             <mat-form-field appearance="outline">
-              <mat-label>Provincia</mat-label>
+              <mat-label>Provincia (*)</mat-label>
               <input matInput formControlName="province" />
               <mat-icon matSuffix>location_city</mat-icon>
-              <mat-hint>Hint</mat-hint>
             </mat-form-field>
           </div>
 
           <div class="signin__form--btsignin">
-            <button mat-raised-button color="primary" (click)="newUser()">
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="newUser()"
+              [disabled]="signinForm.invalid"
+            >
               Registrarse
             </button>
           </div>

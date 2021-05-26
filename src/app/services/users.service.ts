@@ -7,9 +7,25 @@ import { User } from '../models/user';
 export class UsersService {
   users: User[] = [
     {
-      nombre: 'Gabriel',
-      apellido: 'Villegas',
+      firstName: 'Gabriel',
+      secondName: 'Villegas',
       username: 'gabrielvillegas',
+      password: '123456',
+      country: 'Argentina',
+      province: 'Mendoza',
+    },
+    {
+      firstName: 'Giuliana',
+      secondName: 'Moscetta',
+      username: 'giulianamoscetta',
+      password: '123456',
+      country: 'Argentina',
+      province: 'Mendoza',
+    },
+    {
+      firstName: 'Juan',
+      secondName: 'Perez',
+      username: 'juanperez',
       password: '123456',
       country: 'Argentina',
       province: 'Mendoza',
