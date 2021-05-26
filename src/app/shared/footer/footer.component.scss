@@ -1,0 +1,14 @@
+@use "../../../styles.scss" as *;
+
+.footer__container {
+  background-color: $background-color;
+
+  position: relative;
+  bottom: 0;
+  width: 100%;
+
+  .footer {
+    color: $white-color;
+    padding: 0.5rem;
+  }
+}

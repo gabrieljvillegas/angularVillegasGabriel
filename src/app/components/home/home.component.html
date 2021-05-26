@@ -1,0 +1,50 @@
+<main>
+  <div class="home__container">
+    <h2>Mensajería interna</h2>
+
+    <div class="home container">
+      <div class="home__form">
+        <form [formGroup]="loginForm">
+          <div class="home__form--username">
+            <mat-form-field appearance="outline">
+              <mat-label>Usuario</mat-label>
+              <input matInput formControlName="username" />
+              <mat-icon matSuffix>account_circle</mat-icon>
+            </mat-form-field>
+          </div>
+
+          <div class="home__form--password">
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput type="password" formControlName="password" />
+              <mat-icon matSuffix> vpn_key</mat-icon>
+            </mat-form-field>
+          </div>
+
+          <div class="home__form--btlogin">
+            <button
+              mat-raised-button
+              color="primary"
+              [disabled]="loginForm.invalid"
+              (click)="loginUser(username.value, password.value)"
+            >
+              Iniciar sesión
+            </button>
+          </div>
+          <div class="home__form--btdesk" *ngIf="loginStatus">
+            <button mat-raised-button routerLink="/desk">
+              Ir al Escritorio
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="home__signin">
+        <button mat-raised-button color="accent" routerLink="/signin">
+          Regístrate
+        </button>
+        <mat-hint>Primer ingreso</mat-hint>
+      </div>
+    </div>
+  </div>
+</main>

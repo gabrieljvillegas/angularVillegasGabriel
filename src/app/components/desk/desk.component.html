@@ -1,0 +1,23 @@
+<div class="desk__container">
+  <h2>Escritorio</h2>
+
+  <div class="desk container">
+    <button mat-raised-button color="primary" routerLink="/desk/inbox">
+      Mensajes recibidos
+    </button>
+
+    <button mat-raised-button color="primary" routerLink="/desk/outbox">
+      Mensajes enviados
+    </button>
+
+    <button mat-raised-button color="primary" routerLink="/desk/message">
+      Nuevo mensaje
+    </button>
+
+    <button mat-raised-button color="accent" routerLink="/home">
+      Cerrar sesión
+    </button>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>

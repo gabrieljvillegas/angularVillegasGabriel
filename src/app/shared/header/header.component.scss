@@ -1,0 +1,17 @@
+@use "../../../styles.scss" as *;
+
+.header__container{
+
+  background-color: $background-color;
+}
+
+.header{
+
+  h1{
+    text-align: center;
+    color: $white-color;
+    padding: 3rem;
+    font-size: 2.8rem;
+  }
+
+}

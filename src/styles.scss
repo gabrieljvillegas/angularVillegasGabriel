@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap");
+
+// Variables Globales
+
+$background-color: #3f51b5;
+$background-color-2: #ff4081;
+$white-color: rgb(247, 247, 247);
+$black-color: rgb(29, 28, 28);
+
+$font-principal: "Roboto", sans-serif;
+
+// Seteos Generales
+
+html {
+  font-size: 62.5%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-principal;
+  background-color: $white-color;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 100rem;
+  margin: 0 auto;
+}

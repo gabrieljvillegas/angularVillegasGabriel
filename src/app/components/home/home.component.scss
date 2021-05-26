@@ -1,0 +1,54 @@
+@use "../../../styles.scss" as *;
+main {
+  height: calc(100vh - 13.6rem);
+}
+.home__container {
+  h2 {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-top: 1rem;
+    background-color: $background-color-2;
+    padding: 1rem 0;
+  }
+}
+.home {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  &__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+
+    &--username {
+    }
+
+    &--btlogin {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    &--btdesk {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+  }
+  &__signin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h3 {
+      font-weight: 400;
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+  }
+}
